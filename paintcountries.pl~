@@ -1,27 +1,7 @@
-% Presume wa = Western Australia, na = Northern Territory,
-% sa = South Australia, q = Queensland, nws = New South Wales,
-% v = Victoria, t = Tasmania
-
-adjacent(wa,nt). adjacent(nt, wa).
-
-adjacent(wa,sa). adjacent(sa,wa).
-
-adjacent(nt,sa). adjacent(sa,nt).
-
-adjacent(nt,q).  adjacent(q,nt).
-
-adjacent(sa,q).  adjacent(q,sa).
-
-adjacent(sa,nsw). adjacent(nsw,sa).
-
-adjacent(sa,v). adjacent(v,sa).
-
-adjacent(q,nsw). adjacent(nsw,q).
-
-adjacent(nsw,v). adjacent(v,nsw).
-
-adjacent(v, t). adjacent(t, v).
-
+% Presume WA = Western Australia, NA = Northern Territory,
+% SA = South Australia, Q = Queensland, NWS = New South Wales,
+% V = Victoria, T = Tasmania
+%
 color(red).
 color(green).
 color(blue).
