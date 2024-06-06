@@ -1,0 +1,11 @@
+% Presume WA = Western Australia, NA = Northern Territory,
+% SA = South Australia, Q = Queensland, NWS = New South Wales,
+% V = Victoria, T = Tasmania
+%
+color(red).
+color(green).
+color(blue).
+
+colorify(WA, NT, SA, Q, NSW, V, T):-
+    color(WA), color(NT), color(SA), color(Q), color(NSW), color(V), color(T),
+    \+ WA=NT, \+ WA=SA, \+NT=SA, \+NT=Q, \+SA=Q, \+SA=NSW, \+Q=NSW, \+SA=V, \+NSW=V, \+V=T.

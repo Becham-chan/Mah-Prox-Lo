@@ -1,0 +1,8 @@
+power(Base, Expo, Result) :-
+    (   Expo =:= 0
+    ->  Result = 1
+    ;   Expo > 0,
+        Expo1 is Expo - 1,
+        power(Base, Expo1, R1),
+        Result is Base * R1
+    ).

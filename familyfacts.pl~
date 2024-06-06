@@ -1,3 +1,8 @@
+% Presume Alfonso/ Sophia has cousins name Julian and Juliett on their
+% aunt side and Mats, Taylor on their uncle line.
+
+male(julian). % Additional Line
+male(mats). % Additional Line
 male(christopher).
 male(andrew).
 male(arthur).
@@ -22,6 +27,21 @@ female(jannifer).
 female(margaret).
 female(penelope).
 female(christine).
+female(juliett). % Additional Line
+female(taylor). % Additional Line
+
+% Additional Lines
+parent(angela, julian).
+parent(angela, juliett).
+parent(tomaso, julian).
+parent(tomaso, juliett).
+
+parent(emilio, taylor).
+parent(emilio, mats).
+parent(gina, taylor).
+parent(emilio, mats).
+% End of Additional Lines
+
 parent(christopher, arthur).
 parent(christopher, victoria).
 parent(penelope, arthur).
@@ -46,6 +66,9 @@ parent(lucia, alfonso).
 parent(macro, alfonso).
 parent(lucia, sophia).
 parent(macro, sophia).
+
+
+
 father(X,Y) :-parent(X,Y), male(X).
 mother(X,Y) :- parent(X,Y), female(X).
 son(X,Y) :- parent(X,Y), male(Y).
@@ -59,6 +82,11 @@ grandparent(X,Y) :- parent(X,Z),parent(Z,Y).
 ancestor(X,Y) :- parent(X,Y).
 ancestor(X,Y) :- parent(X,Z), ancestor(Z, Y).
 
-cousins(X,Y) :- .
+cousins(X,Y) :- (aunt(Z,X), parent(Z,Y)); (uncle(Z,X), parent(Z,Y)).
 descendants(X,Y) :- parent(Y,X).
-descendants(X,Y) :- parent(Y,Z), descendants(Z,X).
+descendants(X,Y) :- parent(Y,Z), descendants(X,Z).
+
+
+
+
+
